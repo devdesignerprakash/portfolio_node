@@ -7,8 +7,7 @@ class ContactServices{
             return newMessage
 
         }catch(error){
-            console.log(error)
-            throw new Error("Message send failed");
+            throw new Error("Internal Server Error");
         }
     }
 }
