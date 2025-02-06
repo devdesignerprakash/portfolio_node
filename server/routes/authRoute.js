@@ -1,9 +1,10 @@
 const express= require('express')
 const router= express.Router()
 const authContollers= require('../controllers/authControllers')
-
-
-router.route('/register').post(authContollers.regiseterUser)
-router.route('/login').post(authContollers.login)
+const signUpSchema= require('../validators/registrationValidator')
+const loginSchema=require('../validators/loginValidator')
+const validate = require('../middlewares/authValidator')
+router.route('/register').post(validate(signUpSchema),authContollers.regiseterUser)
+router.route('/login').post(validate(loginSchema),authContollers.login)
 
 module.exports=router

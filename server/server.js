@@ -1,13 +1,20 @@
+//require section
+
 require('dotenv').config()
 const express = require('express')
+const userRoute= require('./routes/authRoute')
+const dbConnection= require('./utils/db')
+const errorHandler = require('./middlewares/errorHandler')
+
+
+// use Section
 const app= express()
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
-
-const userRoute= require('./routes/authRoute')
-const dbConnection= require('./utils/db')
+app.use('/auth',userRoute)
+app.use(errorHandler)
 dbConnection().then(()=>{
     app.listen(process.env.PORT,()=>{
         console.log(`app is listening on PORT ${process.env.PORT}`)})
     })
-app.use('/auth',userRoute)
+
