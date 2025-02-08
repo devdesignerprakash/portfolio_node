@@ -1,0 +1,25 @@
+.hero-section {
+    background: url("public/hero-image.jpg") no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .information {
+    background: rgba(255, 255, 255, 0.8); /* Light background for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .floating-button {
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .floating-button:hover {
+    transform: scale(1.1);
+  }
+  
