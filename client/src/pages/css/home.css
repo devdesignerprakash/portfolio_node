@@ -16,10 +16,16 @@
   
   .floating-button {
     margin-top: 20px;
+    border: 2px solid #6c757d;
     transition: all 0.3s ease-in-out;
+    font-weight: 600;
   }
   
   .floating-button:hover {
+    background-color: #6c757d; 
+    color: white !important;
     transform: scale(1.1);
+    font-weight: 600;
+
   }
   

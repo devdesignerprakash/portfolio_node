@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, Row, Col, Image, Card,ProgressBar} from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Image, Card, ProgressBar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBirthdayCake,
@@ -13,20 +13,24 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
-  const skills = [
-    { name: "HTML / CSS", value: 90 },
-    { name: "JavaScript", value: 85 },
-    { name: "React.js", value: 80 },
-    { name: "Node.js", value: 75 },
-    { name: "MongoDB / SQL", value: 70 },
-  ];
+  const skillLevels = {
+    htmlCss: 90,
+    javascript: 85,
+    react: 80,
+    node: 75,
+    mongoSQL: 70,
+    express: 80
+  };
+
+   
+
   return (
-    <Container className="mt-5">
-      {/* First Row: About Me Title and Description */}
+    <Container className="mt-3">
+      {/* About Me Section */}
       <Row className="text-center">
         <Col>
-          <h1 className="mb-3">About Me</h1>
-          <p className="lead">
+          <h2 className="mb-3">About Me</h2>
+          <p className="lead" style={{ textAlign: "justify" }}>
             <b>
               I am a Fullstack Developer from Kathmandu, Nepal, creating
               efficient web applications and seamless user experiences. Always
@@ -36,16 +40,15 @@ const About = () => {
         </Col>
       </Row>
 
-      {/* Second Row: Image & Bio Data */}
+      {/* Profile Image & Bio Data Section */}
       <Row className="align-items-center mt-4">
         {/* Left Column: Profile Image */}
         <Col md={4} className="text-center">
           <Image
             src="public/profile.jpg"
-            roundedCircle
             fluid
             alt="My Photo"
-            className="shadow"
+          className="img-fluid rounded shadow"
           />
         </Col>
 
@@ -65,7 +68,7 @@ const About = () => {
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faPhone} className="me-2" />
-                  <b>Phone:</b> +977 9800000000
+                  <b>Phone:</b> +977 9866332260
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faMapMarkerAlt} className="me-2" />
@@ -77,7 +80,7 @@ const About = () => {
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faEnvelope} className="me-2" />
-                  <b>Email:</b> example@email.com
+                  <b>Email:</b> devdesignerprakash@gmail.com
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faBriefcase} className="me-2" />
@@ -88,19 +91,51 @@ const About = () => {
           </Card>
         </Col>
       </Row>
-      {/* Skills Section */}
+
+      {/* Skills Section (Two Columns) */}
       <Row className="mt-5">
         <Col>
           <h2 className="text-center mb-4">
             <FontAwesomeIcon icon={faCode} className="me-2" />
             Skills
           </h2>
-          {skills.map((skill, index) => (
-            <div key={index} className="mb-3">
-              <b>{skill.name}</b>
-              <ProgressBar now={skill.value} label={`${skill.value}%`} />
-            </div>
-          ))}
+        </Col>
+      </Row>
+      <Row>
+        {/* Left Column */}
+        <Col md={6}>
+          <div className="mb-3">
+            <b>HTML / CSS</b>
+            <ProgressBar animated now={skillLevels.htmlCss} label={`${skillLevels.htmlCss}%`} />
+          </div>
+
+          <div className="mb-3">
+            <b>JavaScript</b>
+            <ProgressBar animated now={skillLevels.javascript} label={`${skillLevels.javascript}%`}  />
+          </div>
+
+          <div className="mb-3">
+            <b>React.js</b>
+            <ProgressBar animated now={skillLevels.react} label={`${skillLevels.react}%`} />
+          </div>
+        </Col>
+
+        {/* Right Column */}
+        <Col md={6}>
+          <div className="mb-3">
+            <b>Node.js</b>
+            <ProgressBar animated now={skillLevels.node} label={`${skillLevels.node}%`} />
+          </div>
+
+          <div className="mb-3">
+            <b>MongoDB / SQL</b>
+            <ProgressBar animated now={skillLevels.mongoSQL} label={`${skillLevels.mongoSQL}%`} />
+          </div>
+
+          <div className="mb-3">
+            <b>Express.js</b>
+            <ProgressBar animated now={skillLevels.express} label={`${skillLevels.express}%`} />
+          </div>
         </Col>
       </Row>
     </Container>
