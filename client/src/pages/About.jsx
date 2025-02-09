@@ -60,7 +60,7 @@ const About = () => {
               <ul className="list-unstyled">
                 <li>
                   <FontAwesomeIcon icon={faBirthdayCake} className="me-2" />
-                  <b>Birthday:</b> 01 Jan 1995
+                  <b>Birthday:</b> 10 March 1994
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faGlobe} className="me-2" />
@@ -76,7 +76,7 @@ const About = () => {
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faGraduationCap} className="me-2" />
-                  <b>Degree:</b> Bachelor's in Computer Science
+                  <b>Degree:</b> BTEC 
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faEnvelope} className="me-2" />

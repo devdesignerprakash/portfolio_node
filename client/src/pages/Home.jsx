@@ -12,7 +12,7 @@ const Home = ({ user }) => {
     <Container fluid className="hero-section">
       <Row className="justify-content-center align-items-center text-center vh-100">
         <Col md={6} className="information">
-          <h2 className="mb-3">Hi {user ? user.name : "Guest"}, welcome to my page</h2>
+          <h2 className="mb-3">Hi {user ? user.name : "Guest"}, welcome to Prakash Tech</h2>
           <p>
             <b> I am a Fullstack Developer from Kathmandu, Nepal, creating efficient web applications
             and seamless user experiences. Always eager to explore new technologies and improve skills.</b>I

@@ -1,16 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  
   const [user,setUser]=useState({
     userName:"",
     email:"",
     password:"",
     phone:""
   })
+  const navigate= useNavigate()
   const handleInput=(e)=>{
     console.log(e.target.value)
     const {name,value}=e.target
@@ -20,9 +24,25 @@ const Register = () => {
      })
   }
 
-  const handleSubmit=(e)=>{
+  const handleSubmit=async(e)=>{
    e.preventDefault()
-   console.log(user)
+   try{
+    const response= await axios.post("http://localhost:8000/auth/register",user)
+    console.log(response)
+    if (response.statusText=="OK"){
+      setUser({
+        userName:"",
+        password:"",
+        email:"",
+        phone:""
+      })
+      navigate("/login")
+    }
+   }
+   catch(error){
+    console.log("register",error)
+   }
+ 
   }
   return (
     <>

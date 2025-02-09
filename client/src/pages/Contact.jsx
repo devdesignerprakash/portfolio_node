@@ -1,6 +1,8 @@
 import React from 'react'
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+
 const Contact = () => {
+
   return (
     <Container className="mt-5">
       <h2 className="text-center mb-4">Get in Touch</h2>
