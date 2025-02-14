@@ -57,11 +57,11 @@ class AuthControllers{
         }
     }
     async getUser(req,res){
-        const user= await getUser(req.email)
-        if(user){
-            const {password,...userData}=user
+        const existUser= await getUser(req.user.email)
+        console.log(existUser)
+        if(existUser){
             res.status(200).json({
-                data:userData
+                data:existUser
             })
         }
         else{

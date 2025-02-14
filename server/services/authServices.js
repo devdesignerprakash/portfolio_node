@@ -14,7 +14,9 @@ class AuthServices{
     }
     async getUser(email){
         try{
-            const existUser= User.find({email:email})
+            const existUser= User.findOne({email}).select({
+                password:0
+            })
             return existUser;
 
         }catch{
