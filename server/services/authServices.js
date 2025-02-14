@@ -12,6 +12,15 @@ class AuthServices{
             throw new Error("User registration failed");
         }
     }
+    async getUser(email){
+        try{
+            const existUser= User.find({email:email})
+            return existUser;
+
+        }catch{
+            throw new Error("User Not found")
+        }
+    }
 }
 
 module.exports=new AuthServices()

@@ -1,5 +1,5 @@
 const User = require("../models/userSchema")
-const { registerUser } = require("../services/authServices")
+const { registerUser,getUser } = require("../services/authServices")
 const bcrypt= require('bcrypt')
 
 class AuthControllers{
@@ -55,6 +55,21 @@ class AuthControllers{
         }catch(error){
             console.log(error)
         }
+    }
+    async getUser(req,res){
+        const user= await getUser(req.email)
+        if(user){
+            const {password,...userData}=user
+            res.status(200).json({
+                data:userData
+            })
+        }
+        else{
+            res.status(404).json({
+                msg:"unauthorized user"
+            })
+        }
+
     }
 }
 
