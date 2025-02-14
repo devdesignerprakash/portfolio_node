@@ -9,6 +9,7 @@ import Register from './pages/Register'
 import NavBar from './components/Navbar'
 import Footer from './components/Footer'
 import ErrorPage from './pages/ErrorPage'
+import Logout from './pages/Logout'
 
 
 function App() {
@@ -17,13 +18,14 @@ function App() {
     <BrowserRouter>
       <NavBar/>
       <Routes>
-        <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/about" element={<About/>}/>
-        <Route exact path="/contact" element={<Contact/>}/>
-        <Route exact path="/services" element={<Services/>}/>
-        <Route exact path="/login" element={<Login/>}/>
-        <Route exact path="/register" element={<Register/>}/>
+        <Route  path="/" element={<Home/>}/>
+        <Route  path="/about" element={<About/>}/>
+        <Route  path="/contact" element={<Contact/>}/>
+        <Route  path="/services" element={<Services/>}/>
+        <Route  path="/login" element={<Login/>}/>
+        <Route  path="/register" element={<Register/>}/>
         <Route path="*" element={<ErrorPage/>}/>
+        <Route  path="/logout" element={<Logout/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
