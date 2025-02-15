@@ -5,7 +5,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useAuth } from '../store/authStore';
 const NavBar = () => {
-  const isLoggedIn=useAuth()
+  const {isLoggedIn}=useAuth()
+  console.log(isLoggedIn)
   return (
    <>
   <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -22,8 +23,8 @@ const NavBar = () => {
             <Nav.Link as={NavLink} to="/about">
               About
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/services" >
-              Services
+            <Nav.Link as={NavLink} to="/projects" >
+              Projects
             </Nav.Link>
             <Nav.Link as={NavLink} to="/contact">
               Contact

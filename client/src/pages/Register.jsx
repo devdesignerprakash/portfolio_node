@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import {toast} from 'react-toastify'
 
 const Register = () => {
   
@@ -30,6 +31,8 @@ const Register = () => {
     const response= await axios.post("http://localhost:8000/auth/register",user)
     console.log(response)
     if (response.statusText=="OK"){
+      const message= response.data.msg
+      toast.success(message)
       setUser({
         userName:"",
         password:"",
@@ -40,7 +43,8 @@ const Register = () => {
     }
    }
    catch(error){
-    console.log("register",error)
+    const errorMessage = error.response?.data?.extraDetails || error.response?.data?.msg ||"Something went wrong";
+    toast.error(errorMessage)
    }
  
   }

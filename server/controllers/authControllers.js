@@ -23,7 +23,6 @@ class AuthControllers{
                 data:newUser,
                 token:token
             })
-
         }catch(error){
             res.status(500).json({msg:"internal Server Error"})
         }
@@ -58,7 +57,7 @@ class AuthControllers{
     }
     async getUser(req,res){
         const existUser= await getUser(req.user.email)
-        console.log(existUser)
+        // console.log(existUser)
         if(existUser){
             res.status(200).json({
                 data:existUser

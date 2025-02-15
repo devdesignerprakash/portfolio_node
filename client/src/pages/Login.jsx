@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import axios from "axios";
 import { useAuth } from "../store/authStore";
 import { useNavigate } from "react-router-dom";
+import {toast} from 'react-toastify'
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -14,7 +15,6 @@ const Login = () => {
   const navigate= useNavigate()
   const {storeTokenInLS} = useAuth();
   const handleInput = (e) => {
-    console.log(e.target.value);
     const { name, value } = e.target;
     setUser({
       ...user,
@@ -31,6 +31,7 @@ const Login = () => {
       );
       if (response.statusText == "OK") {
         const data = response.data;
+        toast.success(data.msg)
         storeTokenInLS(data.token);
         setUser({
           email: "",
@@ -39,7 +40,8 @@ const Login = () => {
         navigate("/")
       }
     } catch (error) {
-      console.log("loginError", error);
+      const errorMessage = error.response?.data?.msg || "Something went wrong!";
+      toast.error(errorMessage);
     }
   };
   return (

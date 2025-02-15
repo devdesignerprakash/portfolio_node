@@ -16,6 +16,8 @@ const signUpSchema= z.object({
   trim()
   .email("Invalid email address"),
   phone:z.string({required_error:"Phone number is required"}).
+  trim().
+  min(10,{message:"Phone number doesn't contain less than 10 Numbers"}).
   max(10,{message:"Phone number doesn't contain more than 10 Numbers"}).
   regex(/[0-9Z]/,"Digits should contain 0-9 numbers")
 })

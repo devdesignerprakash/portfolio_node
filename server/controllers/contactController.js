@@ -3,6 +3,7 @@ const ContactServices = require("../services/contactServices");
 
 class ContactControllers{
     async createMessage(req,res){
+        console.log(req.body)
         try{
             const newContactMessage= await ContactServices.registerMessage(req.body)
             res.status(200).json({

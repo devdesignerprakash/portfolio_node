@@ -1,26 +1,73 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { useAuth } from '../store/authStore';
+import axios from 'axios'
+import {toast} from 'react-toastify'
 
 const Contact = () => {
-
+const [contact,setContact]=useState({
+  userName:"",
+  email:"",
+  message:""
+})
+const {user}= useAuth()
+const [userData, setUserData]=useState(true)
+useEffect(() => {
+  if (user && userData) {
+    setContact({
+      userName: user.userName,
+      email: user.email,
+      message: "",
+    });
+    setUserData(false);
+  }
+}, [user, userData])
+const handleInput=(e)=>{
+  console.log(e.target.value)
+  e.preventDefault()
+  const { name, value } = e.target;
+    setContact({
+      ...contact,
+      [name]: value,
+    });
+}
+const handleSubmit=async(e)=>{
+  e.preventDefault()
+  try{
+    const response= await axios.post("http://localhost:8000/contact/message",contact)
+    if(response.statusText=="OK"){
+      const message= response.data.msg
+      toast.success(message)
+      setContact({
+        userName: user?.userName||"",
+        email: user?.email||"",
+        message: ""
+      })
+    }
+  }catch(error){
+    const errorMessage = error.response?.data?.extraDetails || "Something went wrong!";
+    toast.error(errorMessage);
+  }
+ 
+}
   return (
     <Container className="mt-5">
       <h2 className="text-center mb-4">Get in Touch</h2>
       <Row className="align-items-center">
         {/* Form Section */}
         <Col md={6}>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formUserName" className="mb-3">
               <Form.Label>Full Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter your name" />
+              <Form.Control type="text" placeholder="Enter your name" name="userName" value={contact.userName} onChange={handleInput}/>
             </Form.Group>
             <Form.Group controlId="formEmail" className="mb-3">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter your email" />
+              <Form.Control type="email" placeholder="Enter your email" name="email" value={contact.email} onChange={handleInput}/>
             </Form.Group>
             <Form.Group controlId="formMessage" className="mb-3">
               <Form.Label>Message</Form.Label>
-              <Form.Control as="textarea" rows={4} placeholder="Enter your message" />
+              <Form.Control as="textarea" rows={4} placeholder="Enter your message" name="message" value={contact.message} onChange={handleInput}/>
             </Form.Group>
             <Button variant="primary" type="submit">Send Message</Button>
           </Form>
