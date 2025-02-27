@@ -19,7 +19,9 @@ const About = () => {
     react: 80,
     node: 75,
     mongoSQL: 70,
-    express: 80
+    express: 80,
+    python:80,
+    django:80
   };
 
    
@@ -118,6 +120,10 @@ const About = () => {
             <b>React.js</b>
             <ProgressBar animated now={skillLevels.react} label={`${skillLevels.react}%`} />
           </div>
+          <div className="mb-3">
+            <b>Python</b>
+            <ProgressBar animated now={skillLevels.python} label={`${skillLevels.python}%`} />
+          </div>
         </Col>
 
         {/* Right Column */}
@@ -136,7 +142,12 @@ const About = () => {
             <b>Express.js</b>
             <ProgressBar animated now={skillLevels.express} label={`${skillLevels.express}%`} />
           </div>
+          <div className="mb-3">
+            <b>Django</b>
+            <ProgressBar animated now={skillLevels.django} label={`${skillLevels.django}%`} />
+          </div>
         </Col>
+        
       </Row>
     </Container>
   );

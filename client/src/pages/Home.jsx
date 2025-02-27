@@ -19,9 +19,10 @@ const Home = () => {
             <b> I am a Fullstack Developer from Kathmandu, Nepal, creating efficient web applications
             and seamless user experiences. Always eager to explore new technologies and improve skills.</b>I
           </p>
+          {!user?.isAdmin&&
           <Button variant="outline-secondary"  size="lg" className="floating-button text-dark"  onClick={handleClick}>
             About Me
-          </Button>
+          </Button>}
         </Col>
       </Row>
     </Container>
