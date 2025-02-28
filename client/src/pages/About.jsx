@@ -61,10 +61,6 @@ const About = () => {
               <h2 className="text-center mb-4">Full Stack Developer</h2>
               <ul className="list-unstyled">
                 <li>
-                  <FontAwesomeIcon icon={faBirthdayCake} className="me-2" />
-                  <b>Birthday:</b> 10 March 1994
-                </li>
-                <li>
                   <FontAwesomeIcon icon={faGlobe} className="me-2" />
                   <b>Website:</b> https://prakashportfolio-eight.vercel.app
                 </li>
@@ -75,10 +71,6 @@ const About = () => {
                 <li>
                   <FontAwesomeIcon icon={faMapMarkerAlt} className="me-2" />
                   <b>City:</b> Kathmandu, Nepal
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faGraduationCap} className="me-2" />
-                  <b>Degree:</b> BTEC 
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faEnvelope} className="me-2" />
