@@ -6,7 +6,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import { useAuth } from '../store/authStore';
 const NavBar = () => {
   const {isLoggedIn}=useAuth()
-  console.log(isLoggedIn)
   return (
    <>
   <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">

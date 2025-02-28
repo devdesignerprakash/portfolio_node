@@ -15,7 +15,6 @@ const Register = () => {
   })
   const navigate= useNavigate()
   const handleInput=(e)=>{
-    console.log(e.target.value)
     const {name,value}=e.target
      setUser({
       ...user,
@@ -27,7 +26,6 @@ const Register = () => {
    e.preventDefault()
    try{
     const response= await axios.post("https://portfolio-node-pskc.onrender.com/auth/register",user)
-    console.log(response)
     if (response.status==200){
       const message= response.data.msg
       toast.success(message)

@@ -5,17 +5,17 @@ import Container from "react-bootstrap/Container";
 import axios from "axios";
 import { useAuth } from "../store/authStore";
 import { useNavigate } from "react-router-dom";
-import { NavLink } from 'react-router-dom'
-import Nav from 'react-bootstrap/Nav';
-import {toast} from 'react-toastify'
+import { NavLink } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-  const navigate= useNavigate()
-  const {storeTokenInLS} = useAuth();
+  const navigate = useNavigate();
+  const { storeTokenInLS } = useAuth();
   const handleInput = (e) => {
     const { name, value } = e.target;
     setUser({
@@ -31,15 +31,15 @@ const Login = () => {
         "https://portfolio-node-pskc.onrender.com/auth/login",
         user
       );
-      if (response.status==200) {
+      if (response.status == 200) {
         const data = response.data;
-        toast.success(data.msg)
+        toast.success(data.msg);
         storeTokenInLS(data.token);
         setUser({
           email: "",
           password: "",
         });
-        navigate("/")
+        navigate("/");
       }
     } catch (error) {
       const errorMessage = error.response?.data?.msg || "Something went wrong!";
@@ -90,13 +90,25 @@ const Login = () => {
               Login
             </Button>
             <div className="text-center mt-3">
-    <p>
-      Don't have an account?{' '}
-      <Nav.Link to="/register"  as={NavLink} style={{display: 'inline', padding: 0, color:"blue", cursor:'pointer'}} onMouseOver={(e)=>e.target.style.textDecoration="underline"}>
-        SignUp
-      </Nav.Link>
-    </p>
-  </div>
+              <p>
+                Don't have an account?{" "}
+                <Nav.Link
+                  to="/register"
+                  as={NavLink}
+                  style={{
+                    display: "inline",
+                    padding: 0,
+                    color: "blue",
+                    cursor: "pointer",
+                  }}
+                  onMouseOver={(e) =>
+                    (e.target.style.textDecoration = "underline")
+                  }
+                >
+                  SignUp
+                </Nav.Link>
+              </p>
+            </div>
           </Form>
         </div>
       </Container>

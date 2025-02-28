@@ -23,7 +23,6 @@ useEffect(() => {
   }
 }, [user, userData])
 const handleInput=(e)=>{
-  console.log(e.target.value)
   e.preventDefault()
   const { name, value } = e.target;
     setContact({
