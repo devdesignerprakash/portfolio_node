@@ -31,7 +31,7 @@ const Login = () => {
         "https://portfolio-node-pskc.onrender.com/auth/login",
         user
       );
-      if (response.status ==200) {
+      if (response.status==200) {
         const data = response.data;
         toast.success(data.msg)
         storeTokenInLS(data.token);
