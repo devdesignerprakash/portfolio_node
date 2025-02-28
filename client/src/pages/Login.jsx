@@ -5,6 +5,8 @@ import Container from "react-bootstrap/Container";
 import axios from "axios";
 import { useAuth } from "../store/authStore";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
+import Nav from 'react-bootstrap/Nav';
 import {toast} from 'react-toastify'
 
 const Login = () => {
@@ -87,6 +89,14 @@ const Login = () => {
             <Button variant="primary" type="submit" className="w-100">
               Login
             </Button>
+            <div className="text-center mt-3">
+    <p>
+      Don't have an account?{' '}
+      <Nav.Link to="/register"  as={NavLink} style={{display: 'inline', padding: 0, color:"blue", cursor:'pointer'}} onMouseOver={(e)=>e.target.style.textDecoration="underline"}>
+        SignUp
+      </Nav.Link>
+    </p>
+  </div>
           </Form>
         </div>
       </Container>
