@@ -10,7 +10,7 @@ const Footer = () => {
             <a href="https://www.facebook.com/prakash.neupane.52438" target="_blank" rel="noopener noreferrer" className="text-black mx-2">
               <FaFacebook size={24} />
             </a>
-            <a href="https://instagram.comhttps://www.instagram.com/pra_kash_neupane/" target="_blank" rel="noopener noreferrer" className="text-black mx-2">
+            <a href="https://www.instagram.com/pra_kash_neupane/" target="_blank" rel="noopener noreferrer" className="text-black mx-2">
               <FaInstagram size={24} />
             </a>
             <a href="https://www.linkedin.com/in/prakash-neupane-391248278/" target="_blank" rel="noopener noreferrer" className="text-black mx-2">
