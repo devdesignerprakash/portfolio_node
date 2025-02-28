@@ -76,7 +76,7 @@ const handleSubmit=async(e)=>{
         {/* Image Section */}
         <Col md={6} className="text-center">
           <img
-            src="/public/support-image.png"
+            src="support-image.png"
             alt="Contact Support"
             className="img-fluid rounded shadow"
           />
