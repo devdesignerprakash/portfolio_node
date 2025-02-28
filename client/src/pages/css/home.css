@@ -1,5 +1,5 @@
 .hero-section {
-    background: url("public/hero-image.jpg") no-repeat center center/cover;
+    background: url("hero-image.jpg") no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;

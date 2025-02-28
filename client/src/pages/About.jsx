@@ -47,7 +47,7 @@ const About = () => {
         {/* Left Column: Profile Image */}
         <Col md={4} className="text-center">
           <Image
-            src="public/profile.jpg"
+            src="profile.jpg"
             fluid
             alt="My Photo"
           className="img-fluid rounded shadow"
