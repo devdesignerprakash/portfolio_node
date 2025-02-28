@@ -34,7 +34,7 @@ const handleInput=(e)=>{
 const handleSubmit=async(e)=>{
   e.preventDefault()
   try{
-    const response= await axios.post("http://localhost:8000/contact/message",contact)
+    const response= await axios.post("https://portfolio-node-pskc.onrender.com/contact/message",contact)
     if(response.statusText=="OK"){
       const message= response.data.msg
       toast.success(message)

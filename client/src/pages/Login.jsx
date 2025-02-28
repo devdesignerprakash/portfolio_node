@@ -28,10 +28,10 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8000/auth/login",
+        "https://portfolio-node-pskc.onrender.com/auth/login",
         user
       );
-      if (response.statusText == "OK") {
+      if (response.status ==200) {
         const data = response.data;
         toast.success(data.msg)
         storeTokenInLS(data.token);

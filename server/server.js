@@ -12,6 +12,7 @@ const corsOptions={
     methods:"GET, POST, DELETE, PATCH, PUT, HEAD",
     credentials:true
 }
+console.log(process.env.MONGO_URI)
 
 // use Section
 const app= express()

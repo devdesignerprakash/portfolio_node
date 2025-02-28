@@ -26,9 +26,9 @@ const Register = () => {
   const handleSubmit=async(e)=>{
    e.preventDefault()
    try{
-    const response= await axios.post("http://localhost:8000/auth/register",user)
+    const response= await axios.post("https://portfolio-node-pskc.onrender.com/auth/register",user)
     console.log(response)
-    if (response.statusText=="OK"){
+    if (response.status==200){
       const message= response.data.msg
       toast.success(message)
       setUser({

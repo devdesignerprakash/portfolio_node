@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
     if (!token) return; // 🔹 Prevent API call if token is missing
 
     try {
-      const response = await axios.get("http://localhost:8000/auth/user", {
+      const response = await axios.get("https://portfolio-node-pskc.onrender.com/auth/user", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
