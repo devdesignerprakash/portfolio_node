@@ -66,7 +66,7 @@ const About = () => {
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faGlobe} className="me-2" />
-                  <b>Website:</b> www.example.com
+                  <b>Website:</b> https://prakashportfolio-eight.vercel.app
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faPhone} className="me-2" />
