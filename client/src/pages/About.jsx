@@ -62,7 +62,7 @@ const About = () => {
               <ul className="list-unstyled">
                 <li>
                   <FontAwesomeIcon icon={faGlobe} className="me-2" />
-                  <b>Website:</b> https://prakashportfolio-eight.vercel.app
+                  <b>Website:</b> https://neupane-prakash.com.np
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faPhone} className="me-2" />

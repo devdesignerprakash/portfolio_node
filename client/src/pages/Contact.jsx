@@ -68,7 +68,7 @@ const handleSubmit=async(e)=>{
               <Form.Label>Message</Form.Label>
               <Form.Control as="textarea" rows={4} placeholder="Enter your message" name="message" value={contact.message} onChange={handleInput}/>
             </Form.Group>
-            <Button variant="primary" type="submit">Send Message</Button>
+            <Button variant="primary" type="submit" className="mb-3">Send Message</Button>
           </Form>
         </Col>
         

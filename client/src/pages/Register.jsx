@@ -72,7 +72,7 @@ const Register = () => {
       </Form.Group>
       </Row>
       <Button variant="primary" type="submit">
-        SigUp
+        SignUp
       </Button>
     </Form>
     </div>
