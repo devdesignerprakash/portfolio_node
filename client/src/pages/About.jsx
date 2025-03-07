@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Image, Card, ProgressBar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBirthdayCake,
   faPhone,
   faMapMarkerAlt,
-  faGraduationCap,
   faEnvelope,
   faGlobe,
   faBriefcase,
